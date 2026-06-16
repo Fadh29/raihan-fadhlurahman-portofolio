@@ -128,7 +128,7 @@ const Hero = () => {
               <a href="#projects" className="btn-primary">
                 EXPLORE WORK SYSTEMS <FaArrowRight className="hero-icon-arrow" />
               </a>
-              {/* <a href="/CV_ATS_Raihan_Fadhlurahman.pdf" download="CV_ATS_Raihan_Fadhlurahman.pdf" className="btn-secondary">
+              {/* <a href={`${import.meta.env.BASE_URL}CV_ATS_Raihan_Fadhlurahman.pdf`} download="CV_ATS_Raihan_Fadhlurahman.pdf" className="btn-secondary">
                 DOWNLOAD ATS CV
               </a> */}
             </div>
@@ -201,7 +201,7 @@ const Hero = () => {
             <div className="hero-photo-card">
               <div className="photo-card-img-container">
                 <img
-                  src="/profile.jpg"
+                  src={`${import.meta.env.BASE_URL}profile.jpg`}
                   alt="Raihan Fadhlurahman"
                   className="photo-card-img"
                   onError={(e) => { e.target.onerror = null; e.target.src = "https://ui-avatars.com/api/?name=Raihan+Fadhlurahman&size=512&background=eeece7&color=17171c"; }}

@@ -9,7 +9,7 @@ const projects = [
     desc: "Drove end-to-end system analysis for an enterprise-level LMS, designing critical ecosystems including Course Management, Advanced Quiz Engine, and automated ticketing.",
     categories: ["SYSTEM ANALYSIS", "BACKEND & DATA"],
     tags: ["System Architecture", "Business Logic", "Figma", "Jira", "Postman"],
-    image: "/lms_project.png"
+    image: `${import.meta.env.BASE_URL}lms_project.png`
   },
   {
     title: "SYNERGCG (PLN EPI) PORTAL",
@@ -17,7 +17,7 @@ const projects = [
     desc: "Analyzed existing operations and ensured alignment with BRD as part of a large-scale system reengineering initiative. Designed UI/UX prototypes and performed API validation.",
     categories: ["SYSTEM ANALYSIS"],
     tags: ["SDLC", "Figma", "Postman", "Katalon Studio"],
-    image: "/synergcg_network.png"
+    image: `${import.meta.env.BASE_URL}synergcg_network.png`
   },
   {
     title: "GOTIG (PLN EPI) ATTENDANCE",
@@ -25,7 +25,7 @@ const projects = [
     desc: "Led the overall direction of a new reengineered internal application for meeting attendance and daily activity reporting. Acted as the main communicator between stakeholders and developers.",
     categories: ["SYSTEM ANALYSIS"],
     tags: ["System Design", "QA Testing", "Figma"],
-    image: "/gotig_ui.png"
+    image: `${import.meta.env.BASE_URL}gotig_ui.png`
   },
   {
     title: "SCADA AUTOMATION MONITORING",
@@ -33,7 +33,7 @@ const projects = [
     desc: "Developed an automation-based alerting workflow integrating SCADA event data via Kafka with a WhatsApp blasting notification system to proactively inform stakeholders of outages.",
     categories: ["AUTOMATION", "BACKEND & DATA"],
     tags: ["n8n", "Kafka", "Automation", "Real-Time Systems"],
-    image: "/scada_system.png"
+    image: `${import.meta.env.BASE_URL}scada_system.png`
   }
 ];
 
