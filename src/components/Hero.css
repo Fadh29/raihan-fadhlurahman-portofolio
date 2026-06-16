@@ -1,0 +1,316 @@
+.hero-section {
+  background-color: var(--color-canvas);
+  padding-top: calc(56px + var(--spacing-xxl));
+  padding-bottom: var(--spacing-xxl);
+  border-bottom: 1px solid var(--color-hairline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-text-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.hero-mono-label {
+  color: var(--color-coral);
+  margin-bottom: var(--spacing-md);
+  display: block;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -1.5px;
+  color: var(--color-ink);
+  margin-bottom: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 84px;
+    letter-spacing: -2px;
+  }
+}
+
+.hero-lead {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-body-muted);
+  margin-bottom: var(--spacing-lg);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-lead {
+    font-size: 24px;
+  }
+}
+
+.hero-description {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-body-muted);
+  margin-bottom: var(--spacing-xl);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 576px) {
+  .hero-actions {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  .hero-actions .btn-primary {
+    width: 100%;
+  }
+}
+
+.hero-icon-arrow {
+  margin-left: var(--spacing-xs);
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover .hero-icon-arrow {
+  transform: translateX(4px);
+}
+
+.hero-socials {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.hero-social-link {
+  font-size: 20px;
+  color: var(--color-slate);
+  transition: color 0.2s ease;
+}
+
+.hero-social-link:hover {
+  color: var(--color-primary);
+}
+
+/* Two-card composition in Hero */
+.hero-media-composition {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  width: 100%;
+  margin-top: var(--spacing-xxl);
+}
+
+@media (min-width: 992px) {
+  .hero-media-composition {
+    grid-template-columns: 1.25fr 0.75fr;
+  }
+}
+
+/* Agent Console Card */
+.agent-console-card {
+  background-color: var(--color-primary);
+  color: var(--color-on-dark);
+  border-radius: var(--rounded-sm);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  height: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.console-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.console-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.console-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--rounded-full);
+}
+
+.console-dot.red { background-color: #ff5f56; }
+.console-dot.yellow { background-color: #ffbd2e; }
+.console-dot.green { background-color: #27c93f; }
+
+.console-tabs {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.console-tab {
+  background: transparent;
+  border: none;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px var(--spacing-xs);
+  border-radius: var(--rounded-xs);
+  transition: all 0.2s ease;
+}
+
+.console-tab:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.console-tab.active {
+  color: var(--color-coral);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.console-body {
+  flex-grow: 1;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-y: auto;
+  padding-right: var(--spacing-xs);
+  text-align: left;
+}
+
+.console-log-row {
+  margin-bottom: var(--spacing-xxs);
+  white-space: pre-wrap;
+}
+
+.log-info { color: #8ab4f8; }
+.log-success { color: #81c995; }
+.log-query { color: #f28b82; }
+.log-stream { color: #c5a3e8; }
+.log-text { color: #e8eaed; }
+
+/* Photo Card */
+.hero-photo-card {
+  background-color: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  height: auto;
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
+}
+
+.photo-card-img-container {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: var(--rounded-md);
+  overflow: hidden;
+}
+
+.photo-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.hero-photo-card:hover .photo-card-img {
+  transform: scale(1.03);
+}
+
+.photo-card-footer {
+  border-top: 1px solid var(--color-hairline);
+  padding-top: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo-card-label {
+  font-size: 12px;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+}
+
+.photo-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--color-slate);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--rounded-full);
+  background-color: #27c93f;
+  box-shadow: 0 0 8px #27c93f;
+}
+
+/* Trust Logo Strip */
+.trust-logo-strip {
+  padding: var(--spacing-section) 0;
+  background-color: var(--color-canvas);
+  text-align: center;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.trust-title {
+  color: var(--color-slate);
+  font-size: 12px;
+  margin-bottom: var(--spacing-xl);
+  display: block;
+}
+
+.trust-logos-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xxl) 60px;
+}
+
+.trust-logos-row span {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: var(--color-slate);
+  opacity: 0.6;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  user-select: none;
+}
+
+.trust-logos-row span:hover {
+  opacity: 1;
+  color: var(--color-primary);
+}

@@ -1,0 +1,119 @@
+.experience-section {
+  background-color: var(--color-deep-green);
+  color: var(--color-on-dark);
+  padding: var(--spacing-section) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.experience-marker {
+  color: var(--color-coral);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.experience-title {
+  font-family: var(--font-body);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  color: var(--color-on-dark);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xl);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.experience-card {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.experience-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+@media (min-width: 576px) {
+  .experience-card-header {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+}
+
+.exp-role {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.exp-company {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-coral-soft);
+  margin-top: 4px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.exp-duration {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.exp-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.exp-detail-item {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.exp-bullet {
+  color: var(--color-coral);
+  font-size: 14px;
+  line-height: 1;
+}

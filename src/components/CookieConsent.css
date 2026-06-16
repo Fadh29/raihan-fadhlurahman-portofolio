@@ -1,0 +1,97 @@
+.cookie-banner-cohere {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 800px;
+  background-color: var(--color-primary);
+  color: var(--color-on-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--rounded-sm);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  z-index: 10000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .cookie-banner-content {
+    flex-direction: row;
+    gap: var(--spacing-xl);
+  }
+}
+
+.cookie-banner-text-area {
+  flex-grow: 1;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .cookie-banner-text-area {
+    text-align: left;
+  }
+}
+
+.cookie-banner-eyebrow {
+  color: var(--color-coral-soft);
+  font-size: 11px;
+  margin-bottom: var(--spacing-xxs);
+  display: block;
+  font-family: var(--font-mono);
+}
+
+.cookie-banner-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cookie-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-shrink: 0;
+}
+
+.cookie-accept-btn {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: 1px solid #ffffff;
+  border-radius: var(--rounded-pill);
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.cookie-accept-btn:hover {
+  background-color: var(--color-soft-stone);
+  border-color: var(--color-soft-stone);
+}
+
+.cookie-decline-btn {
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.cookie-decline-btn:hover {
+  color: #ffffff;
+}

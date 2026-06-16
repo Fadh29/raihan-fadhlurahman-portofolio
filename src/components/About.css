@@ -1,0 +1,117 @@
+.about-section {
+  background-color: var(--color-canvas);
+  border-bottom: 1px solid var(--color-hairline);
+  padding: var(--spacing-section) 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xxl);
+}
+
+@media (min-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-marker {
+  color: var(--color-coral);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.about-headline {
+  font-family: var(--font-body);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-ink);
+  text-transform: uppercase;
+}
+
+.about-body-text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-body-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-subhead {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-ink);
+  text-transform: uppercase;
+}
+
+.education-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.education-card {
+  background-color: var(--color-soft-stone);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-sm);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease;
+}
+
+.education-card:hover {
+  border-color: var(--color-primary);
+}
+
+.edu-eyebrow {
+  color: var(--color-slate);
+  font-size: 11px;
+  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-mono);
+}
+
+.edu-title {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: var(--spacing-xxs);
+}
+
+.edu-degree {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xxs);
+}
+
+.edu-gpa {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--color-slate);
+  margin-bottom: var(--spacing-sm);
+}
+
+.edu-details {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-body-muted);
+}
