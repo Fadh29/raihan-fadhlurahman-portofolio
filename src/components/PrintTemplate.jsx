@@ -138,7 +138,6 @@ const PrintTemplate = () => {
               <div className="print-contact-item">fadhlurahmanraihan29@gmail.com</div>
               <div className="print-contact-item">linkedin.com/in/raihanfadhlurahman</div>
               <div className="print-contact-item">github.com/Fadh29</div>
-              <div className="print-contact-item" style={{ color: '#ff7759', fontWeight: '500', marginTop: '4px' }}>https://fadh29.github.io/raihan-fadhlurahman-portofolio/</div>
             </div>
           </div>
 
@@ -199,6 +198,11 @@ const PrintTemplate = () => {
               ))}
             </div>
           </div>
+          
+          <div className="print-page-footer">
+            <span>PORTFOLIO: https://fadh29.github.io/raihan-fadhlurahman-portofolio/</span>
+            <span>Page 1 / 2</span>
+          </div>
         </div>
 
         {/* ================= PAGE 2 ================= */}
@@ -250,6 +254,11 @@ const PrintTemplate = () => {
                 </div>
               ))}
             </div>
+          </div>
+          
+          <div className="print-page-footer">
+            <span>PORTFOLIO: https://fadh29.github.io/raihan-fadhlurahman-portofolio/</span>
+            <span>Page 2 / 2</span>
           </div>
         </div>
 

@@ -1,12 +1,316 @@
 import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 import pptxgen from 'pptxgenjs';
 
 /**
- * Launches the native browser print dialog to generate a high-quality vector PDF
- * with selectable/copyable characters, using print-media styling.
+ * Programmatically builds a beautiful, crisp vector PDF of the resume.
+ * This saves the PDF directly to the user's computer with copyable/selectable text.
  */
-export const exportToPDF = () => {
-  window.print();
+export const exportToPDF = (experiences, projects, skills) => {
+  const doc = new jsPDF('p', 'mm', 'a4');
+  
+  doc.setProperties({
+    title: 'Resume - Raihan Fadhlurahman',
+    author: 'Raihan Fadhlurahman'
+  });
+
+  const primaryColor = [23, 23, 28];    // #17171c
+  const accentColor = [255, 119, 89];   // #ff7759
+  const mutedColor = [117, 117, 138];   // #75758a
+  const softBgColor = [245, 245, 247];  // #f5f5f7
+  const footerLink = 'https://fadh29.github.io/raihan-fadhlurahman-portofolio/';
+
+  const drawHeader = () => {
+    // Top border accent line
+    doc.setDrawColor(accentColor[0], accentColor[1], accentColor[2]);
+    doc.setLineWidth(1.5);
+    doc.line(15, 12, 195, 12);
+
+    // Mono Label
+    doc.setFont('courier', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+    doc.text('SYSTEM ARCHITECT // RF-2026', 15, 19);
+
+    // Name
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(24);
+    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+    doc.text('Raihan Fadhlurahman', 15, 28);
+
+    // Subtitle
+    doc.setFont('helvetica', 'oblique');
+    doc.setFontSize(11);
+    doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
+    doc.text('High-Performance System Architectures & Backend Engine', 15, 33);
+
+    // Contact Information (Right Align)
+    doc.setFont('courier', 'normal');
+    doc.setFontSize(8.5);
+    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+    doc.text('fadhlurahmanraihan29@gmail.com', 195, 19, { align: 'right' });
+    doc.text('linkedin.com/in/raihanfadhlurahman', 195, 23.5, { align: 'right' });
+    doc.text('github.com/Fadh29', 195, 28, { align: 'right' });
+
+    // Header divider line
+    doc.setDrawColor(220, 220, 225);
+    doc.setLineWidth(0.3);
+    doc.line(15, 37, 195, 37);
+  };
+
+  const drawFooter = (pageNum) => {
+    // Footer line
+    doc.setDrawColor(220, 220, 225);
+    doc.setLineWidth(0.3);
+    doc.line(15, 282, 195, 282);
+
+    doc.setFont('courier', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+    doc.text(`PORTFOLIO: ${footerLink}`, 15, 287);
+    doc.text(`Page ${pageNum} / 2`, 195, 287, { align: 'right' });
+  };
+
+  // ==================== PAGE 1 ====================
+  drawHeader();
+
+  // About Section (Left Column)
+  doc.setFont('courier', 'bold');
+  doc.setFontSize(10);
+  doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+  doc.text('// CALIBRATION INFO // 01', 15, 46);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(14);
+  doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+  doc.text('WHO I AM', 15, 51);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9.5);
+  doc.setTextColor(60, 60, 60);
+  
+  const aboutText1 = "I am a results-driven Software Engineer with hands-on experience in backend development, system operations, and large-scale enterprise system environments. I have a proven track record in supporting mission-critical infrastructure, designing scalable system architectures, and translating complex business requirements into robust technical solutions.";
+  const aboutText2 = "Experienced in working within cross-functional teams across engineering, operations, and business stakeholders. Strong exposure to real-time data systems, distributed architecture (Kafka), and database management.";
+  
+  const splitText1 = doc.splitTextToSize(aboutText1, 85);
+  const splitText2 = doc.splitTextToSize(aboutText2, 85);
+  
+  let currentAboutY = 57;
+  doc.text(splitText1, 15, currentAboutY);
+  currentAboutY += (splitText1.length * 4.5) + 4;
+  doc.text(splitText2, 15, currentAboutY);
+
+  // Education Section (Right Column)
+  doc.setFont('courier', 'bold');
+  doc.setFontSize(10);
+  doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+  doc.text('// ACADEMIC SPECIFICATIONS', 110, 46);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(14);
+  doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+  doc.text('EDUCATION', 110, 51);
+
+  // PNJ Card
+  doc.setFillColor(softBgColor[0], softBgColor[1], softBgColor[2]);
+  doc.roundedRect(110, 56, 85, 28, 1, 1, 'F');
+  
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9.5);
+  doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+  doc.text('Politeknik Negeri Jakarta', 113, 61);
+  
+  doc.setFont('courier', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
+  doc.text('PNJ-01', 190, 61, { align: 'right' });
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8.5);
+  doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+  doc.text("Bachelor's Degree in IT // GPA: 3.57", 113, 65);
+  
+  doc.setTextColor(60, 60, 60);
+  const eduDesc1 = "Created E-Ticketing application for Bogor Regency with priority scaling & recursive forums (2020 - 2024).";
+  doc.text(doc.splitTextToSize(eduDesc1, 79), 113, 70);
+
+  // UI CCIT Card
+  doc.setFillColor(softBgColor[0], softBgColor[1], softBgColor[2]);
+  doc.roundedRect(110, 88, 85, 24, 1, 1, 'F');
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9.5);
+  doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+  doc.text('Universitas Indonesia (CCIT)', 113, 93);
+  
+  doc.setFont('courier', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
+  doc.text('UI-02', 190, 93, { align: 'right' });
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8.5);
+  doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+  doc.text("Associate's Degree in Software Eng // GPA: 3.56", 113, 97);
+  
+  doc.setTextColor(60, 60, 60);
+  const eduDesc2 = "Certified in Java Technologies & Professional IT fundamentals.";
+  doc.text(doc.splitTextToSize(eduDesc2, 79), 113, 102);
+
+  // Mid Section Divider
+  doc.setDrawColor(220, 220, 225);
+  doc.setLineWidth(0.3);
+  doc.line(15, 120, 195, 120);
+
+  // Skills Section (Bottom)
+  doc.setFont('courier', 'bold');
+  doc.setFontSize(10);
+  doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+  doc.text('// ENGINE SPECS // 04', 15, 128);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(14);
+  doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+  doc.text('TECHNICAL SPECIFICATIONS', 15, 133);
+
+  // Skill Grid (3 columns, 2 rows)
+  skills.forEach((cat, idx) => {
+    const col = idx % 3;
+    const row = Math.floor(idx / 3);
+    const xPos = 15 + col * 62;
+    const yPos = 138 + row * 45;
+
+    doc.setFillColor(softBgColor[0], softBgColor[1], softBgColor[2]);
+    doc.roundedRect(xPos, yPos, 56, 38, 1, 1, 'F');
+
+    doc.setFont('courier', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+    doc.text(`// ${cat.code}`, xPos + 4, yPos + 6);
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9.5);
+    doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
+    doc.text(doc.splitTextToSize(cat.title, 48), xPos + 4, yPos + 12);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8.5);
+    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+    let skillListText = cat.skills.join(', ');
+    doc.text(doc.splitTextToSize(skillListText, 48), xPos + 4, yPos + 22);
+  });
+
+  drawFooter(1);
+
+  // ==================== PAGE 2 ====================
+  doc.addPage();
+  
+  // Page 2 header line
+  doc.setDrawColor(accentColor[0], accentColor[1], accentColor[2]);
+  doc.setLineWidth(1.0);
+  doc.line(15, 12, 195, 12);
+  
+  doc.setFont('courier', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+  doc.text('Raihan Fadhlurahman // RESUME EXPORT', 15, 17);
+
+  // Work Experience
+  doc.setFont('courier', 'bold');
+  doc.setFontSize(10);
+  doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+  doc.text('// DEVELOPMENT LOGS // 02', 15, 26);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(14);
+  doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+  doc.text('WORK EXPERIENCE', 15, 31);
+
+  // 2-column grid of experience (height 42mm, grid layout)
+  experiences.forEach((exp, idx) => {
+    const col = idx % 2;
+    const row = Math.floor(idx / 2);
+    const xPos = 15 + col * 92;
+    const yPos = 36 + row * 46;
+
+    doc.setFillColor(softBgColor[0], softBgColor[1], softBgColor[2]);
+    doc.roundedRect(xPos, yPos, 88, 42, 1, 1, 'F');
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(10);
+    doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
+    doc.text(doc.splitTextToSize(exp.role, 80), xPos + 4, yPos + 6);
+
+    doc.setFont('courier', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+    doc.text(exp.company, xPos + 4, yPos + 12);
+    
+    doc.setFont('courier', 'normal');
+    doc.setFontSize(7.5);
+    doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+    doc.text(exp.duration, xPos + 84, yPos + 12, { align: 'right' });
+
+    // Bullets list
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(60, 60, 60);
+    
+    let bulletY = yPos + 17;
+    exp.desc.forEach(bullet => {
+      doc.text('▪', xPos + 4, bulletY);
+      const splitBullet = doc.splitTextToSize(bullet, 76);
+      doc.text(splitBullet, xPos + 8, bulletY);
+      bulletY += (splitBullet.length * 3.5) + 0.5;
+    });
+  });
+
+  // Projects Section
+  doc.setFont('courier', 'bold');
+  doc.setFontSize(10);
+  doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+  doc.text('// ENGINEERING ARTIFACTS // 03', 15, 182);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(14);
+  doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+  doc.text('KEY WORK SYSTEMS', 15, 187);
+
+  // 2-column grid of projects (height 37mm)
+  projects.forEach((proj, idx) => {
+    const col = idx % 2;
+    const row = Math.floor(idx / 2);
+    const xPos = 15 + col * 92;
+    const yPos = 192 + row * 41;
+
+    doc.setFillColor(softBgColor[0], softBgColor[1], softBgColor[2]);
+    doc.roundedRect(xPos, yPos, 88, 37, 1, 1, 'F');
+
+    doc.setFont('courier', 'bold');
+    doc.setFontSize(7.5);
+    doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
+    doc.text(proj.role, xPos + 4, yPos + 6);
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(10);
+    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+    doc.text(proj.title, xPos + 4, yPos + 11);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(60, 60, 60);
+    const splitDesc = doc.splitTextToSize(proj.desc, 80);
+    doc.text(splitDesc, xPos + 4, yPos + 16);
+
+    doc.setFont('courier', 'normal');
+    doc.setFontSize(7);
+    doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+    doc.text(proj.tags.join(' | '), xPos + 4, yPos + 32);
+  });
+
+  drawFooter(2);
+
+  doc.save('CV_Raihan_Fadhlurahman.pdf');
 };
 
 /**

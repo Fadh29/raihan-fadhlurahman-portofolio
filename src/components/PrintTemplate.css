@@ -319,6 +319,20 @@
   border-radius: 3px;
 }
 
+.print-page-footer {
+  position: absolute;
+  bottom: 25px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 8px;
+  color: #93939f;
+  border-top: 1px dashed #3a3a42;
+  padding-top: 8px;
+}
+
 @media print {
   body {
     background-color: #17171c !important;

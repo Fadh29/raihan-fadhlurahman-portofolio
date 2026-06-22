@@ -31,7 +31,7 @@ const DownloadDropdown = () => {
     try {
       if (format === 'pdf') {
         setLoadingText('Generating PDF...');
-        await exportToPDF();
+        exportToPDF(experiences, projects, skillCategories);
       } else if (format === 'image') {
         setLoadingText('Generating Image...');
         await exportToImage();
