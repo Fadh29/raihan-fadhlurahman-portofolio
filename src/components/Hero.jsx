@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaLinkedin, FaEnvelope, FaDownload, FaArrowRight } from 'react-icons/fa';
 import './Hero.css';
+import DownloadDropdown from './DownloadDropdown';
+import PrintTemplate from './PrintTemplate';
 
 const logsData = {
   DB_CONNECTOR: [
@@ -128,9 +130,7 @@ const Hero = () => {
               <a href="#projects" className="btn-primary">
                 EXPLORE WORK SYSTEMS <FaArrowRight className="hero-icon-arrow" />
               </a>
-              {/* <a href={`${import.meta.env.BASE_URL}CV_ATS_Raihan_Fadhlurahman.pdf`} download="CV_ATS_Raihan_Fadhlurahman.pdf" className="btn-secondary">
-                DOWNLOAD ATS CV
-              </a> */}
+              <DownloadDropdown />
             </div>
 
             <div className="hero-socials">
@@ -233,6 +233,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      {/* Hidden print layout for downloads */}
+      <PrintTemplate />
     </>
   );
 };

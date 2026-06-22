@@ -1,0 +1,320 @@
+.print-template-offscreen {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 794px;
+  z-index: -9999;
+}
+
+.print-container {
+  width: 794px;
+  background-color: #0b0b0d;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.print-page {
+  width: 794px;
+  height: 1123px;
+  padding: 45px 40px;
+  box-sizing: border-box;
+  background-color: #17171c;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.4;
+}
+
+/* Typography & Labels */
+.print-mono-label {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 10px;
+  color: #93939f;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.print-name {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.print-title-sub {
+  font-size: 13px;
+  color: #ff7759;
+  margin: 2px 0 0 0;
+  font-weight: 500;
+}
+
+.print-section-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 2px;
+  margin-bottom: 12px;
+  letter-spacing: -0.2px;
+}
+
+/* Header */
+.print-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.print-header-left {
+  flex: 1;
+}
+
+.print-header-right {
+  text-align: right;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 10px;
+  color: #93939f;
+}
+
+.print-contact-item {
+  margin-bottom: 2px;
+}
+
+/* Dividers */
+.print-divider {
+  border: none;
+  border-top: 1px dashed #3a3a42;
+  margin: 12px 0;
+  width: 100%;
+}
+
+/* Grids */
+.print-grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 5px;
+}
+
+.print-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.print-body {
+  font-size: 11px;
+  color: #eeece7;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+/* Education Cards */
+.print-edu-item {
+  background-color: #212126;
+  border: 1px solid #3a3a42;
+  border-radius: 6px;
+  padding: 10px 12px;
+  position: relative;
+}
+
+.print-edu-eyebrow {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 8px;
+  color: #ff7759;
+}
+
+.print-edu-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+}
+
+.print-edu-meta {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 9px;
+  color: #93939f;
+  margin: 0 0 6px 0;
+}
+
+.print-edu-desc {
+  font-size: 10px;
+  color: #eeece7;
+  margin: 0;
+}
+
+/* Skills section */
+.print-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.print-skill-card {
+  background-color: #212126;
+  border: 1px solid #3a3a42;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.print-skill-code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 8px;
+  color: #93939f;
+}
+
+.print-skill-cat-title {
+  font-size: 10px;
+  font-weight: bold;
+  color: #ff7759;
+  margin: 2px 0 6px 0;
+  text-transform: uppercase;
+}
+
+.print-skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.print-skill-pill {
+  font-size: 9px;
+  background-color: #17171c;
+  border: 1px solid #2e2e36;
+  color: #eeece7;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Experience styling */
+.print-experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.print-exp-card {
+  background-color: #212126;
+  border: 1px solid #3a3a42;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.print-exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.print-exp-role {
+  font-size: 11px;
+  font-weight: bold;
+  color: #ff7759;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.print-exp-company {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 9px;
+  color: #ffffff;
+  display: block;
+}
+
+.print-exp-duration {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 8px;
+  color: #93939f;
+  white-space: nowrap;
+}
+
+.print-exp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.print-exp-item {
+  font-size: 9.5px;
+  color: #eeece7;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.print-bullet {
+  color: #ff7759;
+  margin-right: 6px;
+  font-size: 10px;
+}
+
+/* Projects styling */
+.print-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.print-proj-card {
+  background-color: #212126;
+  border: 1px solid #3a3a42;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.print-proj-role {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 8px;
+  color: #ff7759;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.print-proj-title {
+  font-size: 11px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.1px;
+}
+
+.print-proj-desc {
+  font-size: 9.5px;
+  color: #eeece7;
+  margin: 0 0 8px 0;
+  flex: 1;
+}
+
+.print-proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.print-proj-tag {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 8px;
+  color: #93939f;
+  background-color: #17171c;
+  padding: 1px 4px;
+  border-radius: 3px;
+}

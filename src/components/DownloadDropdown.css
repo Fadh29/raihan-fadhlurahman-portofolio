@@ -1,0 +1,149 @@
+.download-dropdown-container {
+  position: relative;
+  display: inline-block;
+  z-index: 50;
+}
+
+.download-btn-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.71;
+  border-radius: var(--rounded-pill);
+  padding: 12px 24px;
+  border: 1px solid var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  gap: 10px;
+}
+
+.download-btn-main:hover {
+  background-color: var(--color-cohere-black);
+  border-color: var(--color-cohere-black);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn-main:active {
+  transform: scale(0.98);
+}
+
+.download-btn-main.loading {
+  background-color: #212126;
+  border-color: #3a3a42;
+  color: #93939f;
+  cursor: not-allowed;
+}
+
+.download-main-icon {
+  font-size: 14px;
+}
+
+.chevron-icon {
+  font-size: 10px;
+  color: var(--color-muted);
+  transition: transform 0.2s ease;
+}
+
+.download-btn-main:hover .chevron-icon {
+  color: var(--color-on-primary);
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin-icon {
+  animation: spin 1s linear infinite;
+  color: #ff7759;
+}
+
+/* Dropdown Menu List */
+.download-menu-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  background-color: #17171c;
+  border: 1px solid #3a3a42;
+  border-radius: var(--rounded-sm);
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  z-index: 100;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.download-menu-header {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-muted);
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-bottom: 1px dashed #3a3a42;
+  margin-bottom: 6px;
+}
+
+.download-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  gap: 12px;
+}
+
+.download-menu-item:hover {
+  background-color: #212126;
+}
+
+.format-icon {
+  font-size: 16px;
+}
+
+.format-icon.pdf { color: #ff7759; }       /* Red-Orange */
+.format-icon.ppt { color: #ff9f40; }       /* Orange */
+.format-icon.word { color: #1863dc; }      /* Blue */
+.format-icon.image { color: #2ecc71; }     /* Green */
+
+.format-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.format-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.format-ext {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-muted);
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
