@@ -318,3 +318,45 @@
   padding: 1px 4px;
   border-radius: 3px;
 }
+
+@media print {
+  body {
+    background-color: #17171c !important;
+  }
+  
+  body * {
+    visibility: hidden;
+  }
+  
+  .print-template-offscreen,
+  #print-template-container,
+  #print-template-container * {
+    visibility: visible;
+  }
+  
+  .print-template-offscreen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+  }
+  
+  .print-container {
+    width: 100% !important;
+    background-color: #17171c !important;
+    gap: 0;
+  }
+  
+  .print-page {
+    width: 100% !important;
+    height: 297mm !important;
+    padding: 15mm 20mm !important;
+    box-shadow: none !important;
+    background-color: #17171c !important;
+    box-sizing: border-box !important;
+    page-break-after: always !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

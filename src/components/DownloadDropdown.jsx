@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FaDownload, FaFilePdf, FaFilePowerpoint, FaFileWord, FaFileImage, FaChevronDown } from 'react-icons/fa';
-import { exportToPDF, exportToImage, exportToPPT, exportToWord } from '../utils/exportDocs';
+import { FaDownload, FaFilePdf, FaFilePowerpoint, FaFileImage, FaChevronDown } from 'react-icons/fa';
+import { exportToPDF, exportToImage, exportToPPT } from '../utils/exportDocs';
 import { experiences, projects, skillCategories } from './PrintTemplate';
 import './DownloadDropdown.css';
 
@@ -38,9 +38,6 @@ const DownloadDropdown = () => {
       } else if (format === 'ppt') {
         setLoadingText('Generating PPT...');
         exportToPPT(experiences, projects, skillCategories);
-      } else if (format === 'word') {
-        setLoadingText('Generating Word...');
-        exportToWord(experiences, projects, skillCategories);
       }
     } catch (error) {
       console.error('Download failed:', error);
@@ -85,13 +82,7 @@ const DownloadDropdown = () => {
             </div>
           </li>
 
-          <li onClick={() => handleDownload('word')} className="download-menu-item">
-            <FaFileWord className="format-icon word" />
-            <div className="format-details">
-              <span className="format-title">Word Document</span>
-              <span className="format-ext">.doc</span>
-            </div>
-          </li>
+
 
           <li onClick={() => handleDownload('image')} className="download-menu-item">
             <FaFileImage className="format-icon image" />

@@ -138,6 +138,7 @@ const PrintTemplate = () => {
               <div className="print-contact-item">fadhlurahmanraihan29@gmail.com</div>
               <div className="print-contact-item">linkedin.com/in/raihanfadhlurahman</div>
               <div className="print-contact-item">github.com/Fadh29</div>
+              <div className="print-contact-item" style={{ color: '#ff7759', fontWeight: '500', marginTop: '4px' }}>https://fadh29.github.io/raihan-fadhlurahman-portofolio/</div>
             </div>
           </div>
 
