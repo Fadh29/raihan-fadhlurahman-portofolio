@@ -35,13 +35,13 @@ const Navbar = () => {
               <a href="mailto:fadhlurahmanraihan29@gmail.com" className="btn btn-secondary nav-action-btn">EMAIL ME</a>
             </li>
             <li className="mobile-only-action">
-              <a href={`${import.meta.env.BASE_URL}CV_ATS_Raihan_Fadhlurahman.pdf`} download="CV_ATS_Raihan_Fadhlurahman.pdf" className="btn btn-primary nav-action-btn">DOWNLOAD CV</a>
+              <a href={`${import.meta.env.BASE_URL}CV-Raihan%20Fadhlurahman.pdf`} download="CV-Raihan Fadhlurahman.pdf" className="btn btn-primary nav-action-btn">DOWNLOAD CV</a>
             </li>
           </ul>
 
           <div className="nav-actions-desktop">
             <a href="mailto:fadhlurahmanraihan29@gmail.com" className="btn btn-secondary nav-btn-secondary">EMAIL ME</a>
-            <a href={`${import.meta.env.BASE_URL}CV_ATS_Raihan_Fadhlurahman.pdf`} download="CV_ATS_Raihan_Fadhlurahman.pdf" className="btn btn-primary nav-btn-primary">DOWNLOAD CV</a>
+            <a href={`${import.meta.env.BASE_URL}CV-Raihan%20Fadhlurahman.pdf`} download="CV-Raihan Fadhlurahman.pdf" className="btn btn-primary nav-btn-primary">DOWNLOAD CV</a>
           </div>
 
           <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Toggle menu">
